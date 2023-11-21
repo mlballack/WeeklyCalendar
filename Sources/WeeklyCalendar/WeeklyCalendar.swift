@@ -10,9 +10,10 @@
 
 import SwiftUI
 
-struct WeeklyCalendar: View {
-    public var onChangeDate: ((_ date: Date) -> Void)?
-
+public struct WeeklyCalendar: View {
+    public init() {}
+    
+    private var onChangeDate: ((_ date: Date) -> Void)?
     private var height: CGFloat = 90
 
     @StateObject private var store: WeeklyCalendarStore = WeeklyCalendarStore()
@@ -33,7 +34,7 @@ struct WeeklyCalendar: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 0) {
             Weekbar
 

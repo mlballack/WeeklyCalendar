@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AppTheme {
+public struct AppTheme {
     private var theme: Theme = .light
     
     public mutating func set(_ theme: Theme) {
@@ -22,7 +22,8 @@ struct AppTheme {
             return Color(uiColor: .darkGray)
         case .cyberpunk:
             return .black
-            
+        case .custom(bgColor: let color, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
         }
     }
     
@@ -34,6 +35,8 @@ struct AppTheme {
             return .white
         case .cyberpunk:
             return .green
+        case .custom(bgColor: _, weekdayTextColor: let color, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
         }
     }
     
@@ -45,7 +48,8 @@ struct AppTheme {
             return Color(uiColor: .lightGray)
         case .cyberpunk:
             return .green.opacity(0.6)
-            
+        case .custom(bgColor: _, weekdayTextColor: _, weekendTextColor: let color, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
         }
     }
     
@@ -57,6 +61,8 @@ struct AppTheme {
             return .red
         case .cyberpunk:
             return .white
+        case .custom(bgColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: let color, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
         }
     }
     
@@ -68,6 +74,8 @@ struct AppTheme {
             return .black
         case .cyberpunk:
             return .green
+        case .custom(bgColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: let color, selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
         }
     }
     
@@ -79,6 +87,8 @@ struct AppTheme {
             return .white
         case .cyberpunk:
             return .white
+        case .custom(bgColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: let color, todaySelectedCircleColor: _, dateTextColor: _):
+            return color
         }
     }
     
@@ -90,7 +100,8 @@ struct AppTheme {
             return .red
         case .cyberpunk:
             return .white
-            
+        case .custom(bgColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: let color, dateTextColor: _):
+            return color
         }
     }
     
@@ -102,12 +113,23 @@ struct AppTheme {
             return .white
         case .cyberpunk:
             return .green
+        case .custom(bgColor: _, weekdayTextColor: _, weekendTextColor: _, todayTextColor: _, selectedTextColor: _ , selectedCircleColor: _, todaySelectedCircleColor: _, dateTextColor: let color):
+            return color
         }
     }
     
-    enum Theme {
+    public enum Theme {
         case light
         case dark
         case cyberpunk
+        case custom(bgColor: Color = .white,
+                    weekdayTextColor: Color = .white,
+                    weekendTextColor: Color = .white,
+                    todayTextColor: Color = .white,
+                    selectedTextColor: Color = .white,
+                    selectedCircleColor: Color = .white,
+                    todaySelectedCircleColor: Color = .white,
+                    dateTextColor: Color = .white
+        )
     }
 }
