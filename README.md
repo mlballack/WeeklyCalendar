@@ -104,4 +104,4 @@ I would be happy if you contribute !!
 [![Stats](https://repobeats.axiom.co/api/embed/3b9229c64d59197051a610e702ffb2cc822db648.svg "Repobeats analytics image")](https://github.com/mlballack/WeeklyCalendar)
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [License](https://github.com/mlballack/WeeklyCalendar/blob/main/LICENSE.md) file for details
