@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+#if !os(macOS)
 public struct AppTheme {
     private var theme: Theme = .light
     
@@ -133,3 +133,4 @@ public struct AppTheme {
         )
     }
 }
+#endif

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+#if !os(macOS)
 struct WeekText: View {
     public var date: Date
     
@@ -28,3 +28,4 @@ struct WeekText: View {
             .foregroundStyle(textColor)
     }
 }
+#endif

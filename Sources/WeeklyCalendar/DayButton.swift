@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+#if !os(macOS)
 struct DayButton: View {
     @State var selectedDate: Date = .now
     
@@ -66,3 +66,4 @@ extension DayButton {
         return copy
     }
 }
+#endif

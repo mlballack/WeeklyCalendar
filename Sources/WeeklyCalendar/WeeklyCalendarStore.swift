@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if !os(macOS)
 class WeeklyCalendarStore: ObservableObject {
     @Published public var indexArray: [Int] = []
     @Published public var selectedIndex: Int = 0
@@ -107,3 +108,4 @@ class WeeklyCalendarStore: ObservableObject {
         Calendar.current.date(byAdding: .day, value: to, to: date )
     }
 }
+#endif

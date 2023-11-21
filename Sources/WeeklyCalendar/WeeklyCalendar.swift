@@ -10,6 +10,7 @@
 
 import SwiftUI
 
+#if !os(macOS)
 public struct WeeklyCalendar: View {
     public init() {}
     
@@ -72,7 +73,6 @@ public struct WeeklyCalendar: View {
                 .frame(maxWidth: .infinity)
                 .font(Font(UIFont.monospacedDigitSystemFont(ofSize: 14, weight: .regular)))
                 .foregroundStyle(theme.dateTextColor)
-
         }
         .frame(height: height)
         .padding()
@@ -93,3 +93,4 @@ extension WeeklyCalendar {
         return copy
     }
 }
+#endif
